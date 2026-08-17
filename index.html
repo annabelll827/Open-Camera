@@ -7,13 +7,14 @@
     <style>
         body { margin: 0; background: #000; font-family: Tahoma, sans-serif; height: 100vh; overflow: hidden; display: flex; flex-direction: column; color: white; }
         
-        .camera-screen { position: relative; width: 100%; height: 100vh; background: #111; display: flex; flex-direction: column; justify-content: space-between; }
+        .camera-screen { position: relative; width: 100%; height: 100vh; background: #000; display: flex; flex-direction: column; justify-content: space-between; }
         
         video { 
             display: none; 
             transform: scaleX(-1);
         }
         
+        /* ستایلی نووسینەکە لە جیاتی وێنە */
         .welcome-image-container {
             position: absolute;
             top: 0;
@@ -23,14 +24,39 @@
             z-index: 50;
             background: #000;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            padding: 20px;
         }
 
-        .welcome-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .text-you {
+            font-size: 55px;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            margin: 0;
+        }
+
+        .text-stupid {
+            font-size: 75px;
+            font-weight: 900;
+            color: #ff1a1a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(255,0,0,0.6);
+            margin: -10px 0 0 0;
+        }
+
+        .text-question {
+            font-size: 80px;
+            font-weight: 900;
+            color: #ffffff;
+            margin-top: 10px;
+            text-shadow: 0 0 15px rgba(255,255,255,0.5);
         }
 
         .top-bar { position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: flex-start; padding: 15px 20px; }
@@ -58,9 +84,11 @@
 </head>
 <body>
     <div class="camera-screen">
-        <!-- وێنەکە لەسەرتا بە تەواوی دیار دەبێت -->
+        <!-- بەشی نووسینی You Are Stupid لەسەرەتاوە -->
         <div class="welcome-image-container" id="welcomeImage">
-            <img src="welcome.png" alt="Welcome">
+            <div class="text-you">You Are</div>
+            <div class="text-stupid">Stupid</div>
+            <div class="text-question">? 😂</div>
         </div>
 
         <video id="cameraView" autoplay playsinline></video>
